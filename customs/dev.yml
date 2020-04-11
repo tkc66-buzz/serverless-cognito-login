@@ -1,0 +1,3 @@
+# provider
+deployRegion: us-west-2
+profile: serverless-cognito-login
