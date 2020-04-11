@@ -1,1 +1,0 @@
-# serverless-cognito-login
