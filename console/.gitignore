@@ -41,10 +41,9 @@ yarn-error.log
 testem.log
 /typings
 
+# angular
+.editorconfig
+
 # System Files
 .DS_Store
 Thumbs.db
-
-# cosole
-.editorconfig
-node_modules
