@@ -2,3 +2,7 @@
 deployRegion: us-west-2
 profile: serverless-cognito-login
 retentionInDays: 3
+
+# cognito
+cognitoClientId: '7265qqlobva1shdbe9ncnn8pu7'
+userPoolId: 'us-west-2_Z3wdwfhSD'

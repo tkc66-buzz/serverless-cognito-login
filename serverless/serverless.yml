@@ -1,6 +1,6 @@
 custom: ${file(../customs/${opt:stage, 'dev'}.yml)}
 
-service: desktoday-user-server-me
+service: serverless-cognito-login-server
 
 provider:
   name: aws
@@ -27,7 +27,7 @@ provider:
       Action:
         - "cognito-idp:AdminInitiateAuth"
       Resource:
-        - "arn:aws:cognito-idp:us-west-2:913092107261:userpool/us-west-2_Slxlfcy74"
+        - "arn:aws:cognito-idp:us-west-2:406185915405:userpool/us-west-2_Z3wdwfhSD"
 
 package:
   include:
@@ -42,15 +42,10 @@ functions:
   user_auth:
     handler: src.auth_handler.user_auth_handler
     environment:
-      COGNITO_CLIENT_ID: '7265qqlobva1shdbe9ncnn8pu7'
-      USER_POOL_ID: 'us-west-2_Z3wdwfhSD'
+      COGNITO_CLIENT_ID: ${self:custom.cognitoClientId}
+      USER_POOL_ID: ${self:custom.cognitoUserPoolId}
     events:
       - http:
           path: /auth
           method: post
 
-resources:
-  Resources:
-    ApiGatewayLogGroup:
-      Properties:
-        RetentionInDays: ${self:custom.retentionInDays}
