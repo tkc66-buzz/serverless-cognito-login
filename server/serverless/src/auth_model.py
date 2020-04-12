@@ -1,7 +1,7 @@
 import boto3
 import os
 
-from common.exceptions import LoginFailureException
+from server.common.exceptions import LoginFailureException
 
 
 class Authenticator:
